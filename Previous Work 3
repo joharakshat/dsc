@@ -1,0 +1,9 @@
+library(dslabs)
+data(heights)
+heights %>% 
+  ggplot(aes(height, fill = sex)) + 
+  geom_density(alpha = 0.2) 
+  
+  
+  # In the above task , I have plotted down a smooth density curves to show the variation of heights of male and female . Use of ggplot package done here. 
+  Also submitted screenshot of output.
