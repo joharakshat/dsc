@@ -1,0 +1,26 @@
+D <- 10000
+game <- function(strategy){
+  doors <- as.character(1:3)
+  prize <- sample(c("cash", "paper", "paper"))
+  prize_door <- doors[prize == "car"]
+  my_pick  <- sample(doors, 1)
+  show <- sample(doors[!doors %in% c(my_pick, prize_door)],1)
+  stick <- my_pick
+  stick == prize_door
+  switch <- doors[!doors%in%c(my_pick, show)]
+  choice <- ifelse(strategy == "stick", stick, switch)
+  choice == prize_door
+}
+stick <- replicate(D, game("stick"))
+mean(stick)
+
+switch <- replicate(D, game("switch"))
+mean(switch)
+
+
+# In the above task, I have created a game in which a person has to chose a door to obtain a prize
+  There are three doors behind which one has a cash prize and the other two have paper each
+  now the person has to choose one of the three doors. Then out of the other two doors one door is turn around
+  After this the person is asked whether he wants to switch his doors or not . I have shown the chances of winning for two cases.
+  One case , if he does not switch the chances of the person's winning is 1 in 3.
+  Second case, if he does switch the chances of the person's winning is 2 in 3. 
