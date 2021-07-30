@@ -5,3 +5,9 @@ filter(gapminder, year%in%c(1962, 2012)) %>%
   ggplot(aes(fertility, life_expectancy, col = continent)) +
   geom_point() +
   facet_grid(continent~year)
+  
+  
+  # In the above code, with the data set (gapminder) provided, I have created a scatter plot of the fertility vs life expectancy of various 
+    continents and i have faceted it to show the comparison between the two years i.e. 1962 and 2012. This tasks covers the major topics such
+    as the use of ggplot (package) for creating plots in the R studio and also covers the modifications done on the graphs which additonally covers
+    the topic of faceting, formatting.
